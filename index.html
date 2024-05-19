@@ -1,0 +1,116 @@
+<!DOCTYPE HTML>
+<html lang="CN">
+
+<head>
+    <title>送给豆豆的520礼物</title>
+    <meta name="title" content="送给豆豆的520礼物">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <style type="text/css">
+        @font-face {
+            font-family: digit;
+            src: url('digital.ttf') format("truetype");
+        }
+    </style>
+    <link href="css/default.css" type="text/css" rel="stylesheet">
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/garden.js"></script>
+    <script type="text/javascript" src="js/functions.js"></script>
+</head>
+
+<body>
+<div id="mainDiv">
+    <div id="content">
+        <div id="code">
+            <span class="string">豆豆：</span><br/>
+            <span class="comments"></span><br/>
+            <span class="comments">这是一个在很早之前就想好的520礼物</span><br/>
+            <span class="comments">作为一个程序员的女朋友</span><br/>
+            <span class="comments">那当然得拥有一个程序作为礼物呀~</span><br/>
+            <span class="comments"></span><br/>
+            <span class="comments">在做这个计时器的时候</span><br/>
+            <span class="comments">突然发现</span><br/>
+            <span class="comments">原来我们已经在一起两百多天了</span><br/>
+            <span class="comments">脑袋里还能清楚的记得我们第一次见面的时候</span><br/>
+            <span class="comments">两个人跑到凯德天府吃了一碗怂怂面</span><br/>
+            <span class="comments">然后就直奔球场</span><br/>
+            <span class="comments">还好当时下着雨，天阴沉沉的</span><br/>
+            <span class="comments">你没有看到我红彤彤的脸</span><br/>
+            <span class="comments">嗐</span><br/>
+            <span class="comments"></span><br/>
+            <span class="comments">回想这两百多天里的点点滴滴</span><br/>
+            <span class="comments">我们在西湖吹风，在芒市骑车</span><br/>
+            <span class="comments">在重庆吃火锅，在康定打麻将</span><br/>
+            <span class="comments">mark了很多事情</span><br/>
+            <span class="comments">也看了八百部电影</span><br/>
+            <span class="comments">我们会因快乐而欢呼雀跃</span><br/>
+            <span class="comments">也会有争吵而带雨梨花</span><br/>
+            <span class="comments">但我相信</span><br/>
+            <span class="comments">在我们的共同努力下</span><br/>
+            <span class="comments">那个水到渠成一定会越来越近了</span><br/>
+            <span class="comments"></span><br/>
+            <span class="comments">未来的日子还很长</span><br/>
+            <span class="comments">我想陪着你慢慢走下去</span><br/>
+            <span class="comments">往后余生</span><br/>
+            <span class="comments">请多指教</span><br/>
+            <span class="comments"></span><br/>
+            <span class="placeholder"></span><span class="keyword">520，我爱你</span><br/>
+            <span class="comments"></span><br/>
+            <span class="comments"></span><br/>
+            <span class="placeholder"></span><span class="placeholder"></span><span class="placeholder"></span>
+            <span class="placeholder"></span><span class="placeholder"></span><span
+                class="string">豆哥</span><br/>
+            <span class="placeholder"></span><span class="placeholder"></span><span class="placeholder"></span>
+            <span class="placeholder"></span><span class="placeholder"></span><span
+                class="string">2024/05/17</span><br/>
+        </div>
+        <div id="loveHeart">
+            <canvas id="garden"></canvas>
+            <div id="words">
+                <div id="messages">
+                    豆豆，我们已经在一起了
+                    <div id="elapseClock"></div>
+                </div>
+                <div id="loveu">
+                    希望它流逝到时间的尽头<br/>
+                    <div class="signature"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    var offsetX = $("#loveHeart").width() / 2;
+    var offsetY = $("#loveHeart").height() / 2 - 55;
+    var together = new Date();
+    // 此处月份介于 0 ~ 11 之间。用本地时间表示，如 8 月要用 7 表示。
+    together.setFullYear(2023, 9, 8);
+    together.setHours(19);
+    together.setMinutes(0);
+    together.setSeconds(0);
+    together.setMilliseconds(0);
+
+    if (!document.createElement('canvas').getContext) {
+        var msg = document.createElement("div");
+        msg.id = "errorMsg";
+        msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+";
+        document.body.appendChild(msg);
+        $("#code").css("display", "none")
+        document.execCommand("stop");
+    } else {
+        setTimeout(function () {
+            startHeartAnimation();
+        }, 5000);
+
+        timeElapse(together);
+        setInterval(function () {
+            timeElapse(together);
+        }, 500);
+
+        adjustCodePosition();
+        $("#code").typewriter();
+    }
+</script>
+</body>
+
+</html>
